@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/bootstrap.css'}">
+    <title>Students</title>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(35,67,105,0.85)">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{'/'}">Student Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{'/addStudent'}">Add Student</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
+<form th:action="${'/addStudent'}" method="post">
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-6 mx-auto">
+
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <label>NAME : </label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <input type="text" class="form-control" name="studentName" required placeholder="NAME">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <label>SURNAME : </label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <input type="text" class="form-control" name="studentSurname" required placeholder="SURNAME: ">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <label>Exam  : </label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <input type="number" min="0" max="100" class="form-control" name="studentExam" required >
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-3">
+                        <button class="btn-sm" >ADD STUDENT</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</form>
+</body>
+</html>
